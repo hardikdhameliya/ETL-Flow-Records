@@ -1,0 +1,21 @@
+fetch:
+     timeout: 10s # Reading files and pushing data into upload section timeout 
+     interval: 3s # Interval between successive reading
+     maximum_file: 3 # maximum_file that can be read at once
+     file_path: "/Users/hdhameliya/Documents/flows" # Dir location for flow records
+
+
+vendor:
+     url: "http://standards-oui.ieee.org/oui.txt" # Vendor info url
+     database:
+         address: "localhost:6379" # database address to store vendor info 
+
+buffer:
+   size: 3 # buffer size to store enriched flow records until upload section reads it
+
+upload:
+     app: my-app # Name of the app
+     name: flow # Name of the database
+     timeout: 10s # connection timeout
+     url: "mongodb://localhost:27017" # database url
+    
